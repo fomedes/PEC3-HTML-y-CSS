@@ -1,0 +1,590 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;0,800;1,400&display=swap');
+
+:root {
+    --text-primary: rgb(0, 0, 0);
+    --text-secondary: rgb(255, 255, 255);
+    --contrast-color: rgb(189, 55, 0);
+    --main-background: rgb(244, 244, 244);
+    --dark-background: rgb(0, 0, 0);
+    --white-background: rgb(255, 255, 255);
+    --subscribe-background: rgb(242 232 228);
+}
+
+/*Eliminamos margins y paddings*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html{
+    font-family: 'Raleway', sans-serif;
+}
+
+header{
+    text-transform: uppercase;
+}
+
+/* dispositivos pequeños y móviles */
+@media (max-width: 767px) { 
+    .container {
+      max-width: 730px;
+    }
+
+    header,
+    footer{
+        text-align: center;
+    }
+
+    .page-home main .intro-picture .container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .page-home main .intro-picture .title {
+        text-align: left;
+        vertical-align: middle;
+        font-weight: 400;
+        font-size: 2rem;
+        padding-right: 25px;
+        padding-left: 10px;
+    }
+    
+    h1{
+        text-align: center;
+    }
+    
+    h2{
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .page-sintoma .sintoma{
+        background-color: var(--white-background);
+        padding: 30px 20px 5px 20px;
+        border-radius: 10px;
+    }
+}
+
+/* dispositivos grandes */
+@media (min-width: 768px) {
+    .container {
+        max-width: 700px;
+      }
+
+    
+    @media (min-width: 992px) {
+        .container {
+          max-width: 900px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+          max-width: 1050px;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .container {
+          max-width: 1200px;
+        }
+    }
+
+    h1{
+        text-align: center;
+    }
+    
+    h2{
+        text-align: center;
+        padding: 10px 0;
+        font-size: 2rem;
+    }
+    
+    
+/* Formato navegador */
+    nav ul{
+        display: inline-flex;
+    }
+
+    nav ul li{
+        padding-right: 20px;
+    }
+
+/* Formato pie de página */
+    footer ul{
+        display: inline-flex;
+    }
+
+    footer ul li{
+        padding-right: 10px;
+    }
+
+    footer ul.legal-links li :before{
+        content: "\0B7";
+        padding-right: 10px;
+        font-weight: 800;
+    }
+
+    footer ul.legal-links li.first-link :before{
+        content: "";
+        padding-right: 0;
+    }
+
+    .container{
+        margin: 0 auto;
+    }
+
+    .page-home main .intro-picture .container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .page-home main .intro-picture .title {
+        text-align: left;
+        font-weight: 400;
+        font-size: 3rem;
+    }
+
+    .page-home .subscribe .centered-form{
+        margin: 0px 20%;
+        max-width: 400px;
+        margin: auto;
+    }
+    
+    .page-home .noticias{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+/* Página síntomas para dispositivos grandes */
+    .page-sintoma main .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+    .page-sintoma main .container .titulo{
+        grid-column: 1/4;
+        grid-row: 1;
+    }
+
+    .page-sintoma main .container .primero{
+        grid-column: 1/3;
+        grid-row: 2;
+    }
+
+    .page-sintoma main .container .segundo{
+        grid-column: 2/4;
+        grid-row: 3;
+    }
+
+    .page-sintoma main .container .tercero{
+        grid-column: 1/3;
+        grid-row: 4;
+    }
+
+    .page-sintoma main .container .cuarto{
+        grid-column: 2/4;
+        grid-row: 5;
+    }
+
+    .page-sintoma main .container .quinto{
+        grid-column: 1/3;
+        grid-row: 6;
+    }
+
+    .page-sintoma .sintoma{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+        background-color: var(--white-background);
+        border-radius: 10px;
+    }
+
+    .page-sintoma .sintoma .img-sintoma{
+        grid-column: 1;
+    }
+
+    .page-sintoma .sintoma .cuerpo-sintoma{
+        grid-column: 2;
+    }
+
+    .page-sintoma .sintoma h2{
+        padding: 0;
+    }
+    .page-sintoma .sintoma .cuerpo-sintoma{
+        padding-left: 20px;
+    }
+
+
+/* Página vídeos dispositivos grandes*/
+    .page-videos main .container,
+    .page-cop26 main .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .page-videos main .container .titulo,
+    .page-cop26 main .container .titulo{
+        grid-column: 1/3;
+        grid-row: 1;
+    }
+
+    .page-videos main .container .primero,
+    .page-cop26 main .container .datos{
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .page-videos main .container .segundo
+    .page-cop26 main .container .resultados{
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .page-videos main .container .tercero{
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .page-videos main .container .cuarto{
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+
+
+
+}
+
+
+/* /////////////// fin media //////////// */
+
+
+/*Formato del footer*/
+footer{
+    background: var(--dark-background);
+    color: var(--text-secondary);
+    padding: 30px 50px;
+}
+
+footer a{
+    color: var(--text-secondary);
+}
+
+footer .legal-links a:hover{
+    color: var(--contrast-color);
+}
+
+footer .social-links a:hover{
+    opacity: 0.7;
+}
+
+footer section{
+    padding-top: 20px;
+}
+
+footer .social-links{
+    display: inline-flex;
+}
+
+ol {
+    display: list-item;
+    padding: 20px;
+}
+
+ul li{
+    list-style-type: none;;
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    background-color: transparent; 
+  }
+  
+a:hover {
+    color: rgba(0,0,0,0.5);
+}
+
+.lema{
+    font-size: 0.8rem;
+}
+
+.cabecera{
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+nav{
+    padding-top: 20px;
+}
+nav ul{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 800;
+}
+
+header .menu-links li.active a{
+    color: var(--contrast-color);
+}  
+
+header .menu-links li.active a:hover{
+    color: rgba(0,0,0,0.5);
+}  
+
+
+/*Formato general del main */
+main{
+    background-color: var(--main-background);
+}
+
+main .container{
+padding-top: 20px;
+padding-bottom: 40px;
+}
+
+main .titulo{
+    padding-top: 20;
+    padding-bottom: 0;
+}
+
+main section{
+    padding: 10px 10px;
+    line-height: 1.5;
+}
+
+q{
+    quotes: "\00AB" '\00BB';
+}
+
+span.obra{
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* formato para links en la sección de noticias */
+p a{
+    color: var(--contrast-color);
+    font-weight: 600;
+}
+
+p a:hover{
+    color: var(--text-primary);
+}
+
+p a.more{
+    border-bottom: 1px dotted;
+    padding-bottom: 3px;
+} 
+
+.page-home main .container{
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.page-home main .intro-picture {
+    background: url(../img/bg-hero-home.jpg) no-repeat center;
+    background-size: cover;
+    height: 300px;
+    line-height: 280px;
+    color: white;
+}
+
+/*Formato sección noticiero*/
+.page-home main .container .site-description{
+    font-size: 1.2rem;
+}
+
+.page-home main .container .site-description p{
+    padding-bottom: 20px;
+}
+
+.noticia > img{
+    max-width: 100%; 
+    margin: 5px auto;
+}
+
+.noticia > p{
+    margin: 10px 0;
+}
+
+
+.noticia .fecha,
+.noticia .more{
+    font-size: 0.8rem;
+}
+
+.noticia .titular{
+    font-size: 1.2rem;
+}
+
+.noticia .cuerpo{
+    font-size: 0.9rem;
+}
+
+/* formatos de textos en la sección suscríbete */
+
+.page-home .subscribe{
+    background-color: var(--subscribe-background);
+    padding: 40px 30px;
+}
+
+.page-home .subscribe p,
+.conditions{
+    font-size: 0.6rem;
+    margin-bottom: 15px;
+}
+
+.page-home .subscribe h2{
+    line-height: 0.95;
+}
+
+.page-home .subscribe button{
+    color: var(--text-secondary);
+    background-color: var(--contrast-color);
+    padding: 15px 20px;
+    text-transform: uppercase;
+    border: none;
+    max-width: 200px;
+}
+
+.page-home .subscribe button:hover{
+    background-color: var(--dark-background);
+    color: var(--text-secondary);
+}
+
+.subscribe p a{
+    color: var(--contrast-color);
+}
+
+.subscribe p a:hover{
+    color: var(--dark-background);
+}
+
+/* Formato de campos seccion suscríbete*/
+
+.subscribe form{
+    text-align: center;
+}
+
+.subscribe form fieldset{
+    border: none;
+    margin: auto;
+}
+
+.subscribe form fieldset legend{
+    display: none;
+}
+
+.subscribe form fieldset .hidden-label{
+    display: none;
+}
+
+.subscribe .form-control{
+    display: inline-block;
+    width: 400px;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+  }
+
+fieldset ::placeholder{
+    font-size: 1rem;
+}
+
+
+
+/* Formato página de síntomas*/
+
+
+.page-sintoma .sintoma img{
+    max-width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    padding: 15px auto;
+}
+
+.page-sintoma h2{
+    text-align: left;
+    font-size: 1.3rem;
+    padding-bottom: 0;
+}
+
+.page-sintoma .sintoma p{
+    padding-bottom: 10px;
+}
+
+/* Formato página de vídeos */
+
+.page-videos iframe{
+    max-width: 100%; 
+    height: 250px;
+}
+
+.page-videos .video-fluid{
+    background-color: var(--white-background);
+}
+
+.page-videos .video-fluid figcaption{
+    text-align: center;
+    padding: 10px 20px 15px 20px;
+}
+
+
+/* Formato página cop26 */
+
+.page-cop26 section{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.page-cop26 section p{
+    padding-bottom: 15px;   
+}
+
+.page-cop26 h2{
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-bottom: 15px;
+}
+
+.page-cop26 h3{
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.7rem;
+    padding-bottom: 0;
+}
+
+.page-cop26 .resultados ol{
+    padding-top: 0;
+    list-style-type: none;
+}
+
+.page-cop26 .resultados ol li{
+    padding-bottom: 20px;
+    list-style-type: decimal;
+}
+
+.page-cop26 blockquote{
+    margin-bottom: 30px;
+    padding: 15px 15px;
+    background-color: var(--white-background);
+    border-left: 4px solid #ff1616;
+}
+
+.page-cop26 blockquote p{
+    font-style: italic;
+}
+
+.page-cop26 blockquote cite{
+    font-weight: 800;
+}
