@@ -521,7 +521,7 @@ fieldset ::placeholder{
 /* Formato página de vídeos */
 
 .page-videos iframe{
-    width: 500px; 
+    width: 100%; 
     height: 250px;
     border: 0;
 
